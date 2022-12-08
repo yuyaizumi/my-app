@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { ColoredMessage } from "./components/ColoredMessage";
 
 export const App = () => {
+    console.log(" レンダリング ");
+
+
+    // State の定義
+    const [num, setNum] = useState(0);
+
     // ボタンを推したときに実行する関数を定義
     const onClickButton = () => {
-        alert();
+        //-- alert();
+        // setNum(num + 1);
+        setNum((prev) => prev + 1);
     };
 
 
@@ -22,6 +31,7 @@ export const App = () => {
         {/* <ColoredMessage color="pink" message=" 元気です " /> */}
         <ColoredMessage color="pink">元気です！ </ColoredMessage>
         <button onClick={onClickButton}> ボタン </button>
+        <p>{num}</p>
         </>
         );
     };
